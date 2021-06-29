@@ -26,9 +26,16 @@
 | image              |        |             |
 | text               | string | null: false |
 | user_id            | text   | null: false |
-| price              | text   | null: false |
+| price              | integer    | null: false |
+| exposition         | string   | null: false |
+| details            | string   | null: false |
+| shipping           | references | null: false, foreign_key: true  |
+| price              | integer    | null: false |
+
 ### Association
 - belongs_to :user
+- has_one :donation
+
 
 ## addresses テーブル
 
@@ -39,24 +46,23 @@
 | prefecture         | integer  | null: false |
 | postal_code        | string   | null: false |
 | house              | string   | null: false |
-| building_name      | string   | null: false |
+| building_name      | string   |             |
 | donation           | references   | null: false, foreign_key: true |
 | tel                | string | null: false |
 
 ### Association
-- belongs_to :user
+- has_one :donations
 - 
 ## donations テーブル
 
 
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
-| shipping           | references | null: false, foreign_key: true  |
-| price              | integer    | null: false |
-| items              | string   | null: false |
-| text               | string   | null: false |
-| exposition         | string   | null: false |
-| details            | string   | null: false |
+| user_id            | text   | null: false |
+| item_id            | text   | null: false |
+
 
 ### Association
 - belongs_to :user
+- belongs_to :item
+- belongs_to :addresses
