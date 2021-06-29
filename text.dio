@@ -7,19 +7,19 @@
                 <mxCell id="4" value="items テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="520" y="120" width="280" height="240" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="・title   string&#10;・image&#10;・text   string&#10;・user_id   text&#10;・shipping   references&#10;・price   integer　&#10;・exposition   string&#10;・details   string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="4">
+                <mxCell id="5" value="・title   string&#10;・image&#10;・text   text&#10;・user_id   text&#10;・shipping_id   references&#10;・price   integer　&#10;・exposition_id   string&#10;・details_id   string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="4">
                     <mxGeometry y="30" width="280" height="210" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="users テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry y="130" width="270" height="230" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="・nickname   string&#10;・email   string&#10;・encrypted_password   string&#10;・name   string&#10;・name_string   string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="7">
+                <mxCell id="10" value="・nickname   string&#10;・email   string&#10;・encrypted_password   string&#10;・name   string&#10;・reading   string" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="7">
                     <mxGeometry y="30" width="270" height="200" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="addresses テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fontColor=#FFFFFF;" vertex="1" parent="1">
                     <mxGeometry y="510" width="270" height="250" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="・postal_code   string &#10;・tel   string &#10;・prefecture   integer&#10;・city   string &#10;・house   string &#10;・building   string &#10;・donation   references&#10;・&#10;・" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="11">
+                <mxCell id="12" value="・postal_code_id   string &#10;・tel_id   string &#10;・prefecture_id   integer&#10;・city_id   string &#10;・house_id   string &#10;・building_id   string &#10;・donation   references&#10;・&#10;・" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="11">
                     <mxGeometry y="30" width="270" height="220" as="geometry"/>
                 </mxCell>
                 <mxCell id="14" value="donations テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">

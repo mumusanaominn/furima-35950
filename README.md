@@ -8,8 +8,9 @@
 | email              | string | null: false |
 | encrypted_password | string | null: false |
 | name               | string | null: false |
-| name_reading       | string | null: false |
+| reading       | string | null: false |
 | nickname           | string | null: false |
+| birthday           | string | null: false |
 
 
 ### Association
@@ -24,13 +25,12 @@
 | ------------------ | ------ | ----------- |
 | title              | string | null: false |
 | image              |        |             |
-| text               | string | null: false |
-| user_id            | text   | null: false |
+| text               | text | null: false |
+| user_id            | text   | null: false, foreign_key: true |
 | price              | integer    | null: false |
-| exposition         | string   | null: false |
-| details            | string   | null: false |
-| shipping           | references | null: false, foreign_key: true  |
-| price              | integer    | null: false |
+| exposition_id         | string   | null: false |
+| details_id            | string   | null: false |
+| shipping_id           | references | null: false, foreign_key: true  |
 
 ### Association
 - belongs_to :user
@@ -42,27 +42,27 @@
 
 | Column             | Type     | Options     |
 | ------------------ | -------- | ----------- |
-| city               | string   | null: false |
-| prefecture         | integer  | null: false |
-| postal_code        | string   | null: false |
-| house              | string   | null: false |
-| building_name      | string   |             |
+| city_id               | string   | null: false |
+| prefecture_id         | integer  | null: false |
+| postal_code_id        | string   | null: false |
+| house_id              | string   | null: false |
+| building_id      | string   |             |
 | donation           | references   | null: false, foreign_key: true |
-| tel                | string | null: false |
+| tel_id                | string | null: false |
 
 ### Association
-- has_one :donations
+- belong_to :donations
 - 
 ## donations テーブル
 
 
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
-| user_id            | text   | null: false |
-| item_id            | text   | null: false |
+| user_id            | text   | null: false, foreign_key: true |
+| item_id            | text   | null: false, foreign_key: true |
 
 
 ### Association
 - belongs_to :user
 - belongs_to :item
-- belongs_to :addresses
+- has_one :addresses
