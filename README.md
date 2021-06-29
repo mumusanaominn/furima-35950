@@ -26,7 +26,7 @@
 | title              | string | null: false |
 | image              |        |             |
 | text               | text | null: false |
-| user_id            | text   | null: false, foreign_key: true |
+| user_id            | references   | null: false, foreign_key: true |
 | price              | integer    | null: false |
 | exposition_id         | string   | null: false |
 | details_id            | string   | null: false |
@@ -58,8 +58,8 @@
 
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
-| user_id            | text   | null: false, foreign_key: true |
-| item_id            | text   | null: false, foreign_key: true |
+| user_id            | references   | null: false, foreign_key: true |
+| item_id            | references   | null: false, foreign_key: true |
 
 
 ### Association
