@@ -25,7 +25,7 @@
                 <mxCell id="14" value="donations テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="520" y="510" width="280" height="250" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="・user_id&#10;・item_id&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="14">
+                <mxCell id="15" value="・user_id   integer&#10;・item_id   string&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="14">
                     <mxGeometry y="30" width="280" height="220" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;fontColor=#FFFFFF;jumpSize=15;targetPerimeterSpacing=3;entryX=0;entryY=0.381;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=7;sourcePerimeterSpacing=3;" edge="1" parent="1" target="5">
