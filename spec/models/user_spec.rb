@@ -60,7 +60,7 @@ RSpec.describe User, type: :model do
         another_user.valid?
         expect(another_user.errors.full_messages).to include('Email has already been taken')
       end
-      it 'passwordとencrypted_password半角英数混合でないと保存できないこと' do
+      it 'passwordが半角英数混合でないと保存できないこと' do
         @user.password = '000000'
         @user.password_confirmation = '000000'
         @user.valid?
@@ -98,7 +98,7 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters.")
       end
-      it 'passwordが存在してもencrypted_passwordが空では保存できない' do
+      it 'passwordが存在してもpassword_confirmationが空では保存できない' do
         @user.password = "000000aaaa"
         @user.password_confirmation = ""
         @user.valid?

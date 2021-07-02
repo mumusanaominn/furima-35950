@@ -15,12 +15,14 @@ class User < ApplicationRecord
   validates :birthday, presence: true
 
   with_options presence: true do
-    # ひらがな、カタカナ、漢字のみ許可する
-    validates :last_name, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: "is invalid. Input full-width characters."}
-    validates :first_name, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: "is invalid. Input full-width characters."}
-    # カタカナのみ許可する  カナネームとカタネームです！
-    validates :kata_name, format: {with: /\A[ァ-ヶー]+\z/, message: "is invalid. Input full-width katakana characters."}
-    validates :kana_name, format: {with: /\A[ァ-ヶー]+\z/, message: "is invalid. Input full-width katakana characters."}
+    with_options presence: true, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: "is invalid. Input full-width characters."} do
+      validates :last_name
+      validates :first_name
+    end
+    with_options presence: true, format: {with: /\A[ァ-ヶー]+\z/, message: "is invalid. Input full-width katakana characters."} do
+      validates :kata_name
+      validates :kana_name
+    end
     # 半角英字数字のみ許可する
     validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/, message: "is invalid. Input half-width characters."}
   end
