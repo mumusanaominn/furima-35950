@@ -33,6 +33,13 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
 
+      it 'imageが空だと保存できないこと' do
+        @item.image = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Image can't be blank")
+      end
+
+
       it 'category_idを選択していないと保存できないこと' do
         @item.category_id = 1
         @item.valid?
