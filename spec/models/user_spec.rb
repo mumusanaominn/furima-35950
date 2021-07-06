@@ -53,7 +53,7 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
-      end    
+      end
       it '重複したemailが存在する場合保存できないこと' do
         @user.save
         another_user = FactoryBot.build(:user, email: @user.email)
@@ -64,7 +64,7 @@ RSpec.describe User, type: :model do
         @user.password = '000000'
         @user.password_confirmation = '000000'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters.")
+        expect(@user.errors.full_messages).to include('Password is invalid. Input half-width characters.')
       end
       it 'last_nameが空では保存できないこと' do
         @user.last_name = ''
@@ -96,11 +96,11 @@ RSpec.describe User, type: :model do
         @user.password = '000000'
         @user.password_confirmation = '000000'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters.")
+        expect(@user.errors.full_messages).to include('Password is invalid. Input half-width characters.')
       end
       it 'passwordが存在してもpassword_confirmationが空では保存できない' do
-        @user.password = "000000aaaa"
-        @user.password_confirmation = ""
+        @user.password = '000000aaaa'
+        @user.password_confirmation = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
@@ -113,24 +113,24 @@ RSpec.describe User, type: :model do
         @user.password = '0000000000'
         @user.password_confirmation = '0000000000'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters.")
+        expect(@user.errors.full_messages).to include('Password is invalid. Input half-width characters.')
       end
       it 'passwordが英字だけでは保存できないこと' do
         @user.password = 'aaaaaaaaa'
         @user.password_confirmation = 'aaaaaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters.")
+        expect(@user.errors.full_messages).to include('Password is invalid. Input half-width characters.')
       end
       it 'passwordが全角文字が含まれている場合は保存できないこと' do
         @user.password = '111あああ'
         @user.password_confirmation = '111あああ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters.")
+        expect(@user.errors.full_messages).to include('Password is invalid. Input half-width characters.')
       end
       it 'メールアドレスに@がないと保存できないこと' do
         @user.email = 'aaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
     end
   end
