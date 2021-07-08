@@ -39,7 +39,6 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
 
-
       it 'category_idを選択していないと保存できないこと' do
         @item.category_id = 1
         @item.valid?
@@ -83,7 +82,7 @@ RSpec.describe Item, type: :model do
       end
 
       it 'priceが9,999,999円を超過すると保存できないこと' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is invalid')
       end
