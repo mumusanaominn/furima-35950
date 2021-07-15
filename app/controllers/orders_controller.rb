@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
+  before_action :set_item, only: [:sold_out_item, :index, :create]
   before_action :sold_out_item, only: [:index, :create]
   before_action :move_to_index, only: [:index, :create]
-  before_action :set_item, only: [:index, :create]
 
   def index
     @order_address = OrderAddress.new
@@ -35,8 +35,6 @@ class OrdersController < ApplicationController
   end
 
   def sold_out_item
-    @item = Item.find(params[:item_id])
-
     redirect_to root_path if @item.order.present?
   end
 

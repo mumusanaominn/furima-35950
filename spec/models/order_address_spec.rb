@@ -85,6 +85,12 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Item can't be blank")
       end
+
+      it 'telが全角数字だと登録できないこと' do
+        @order_address.tel = '１１１１２２２２３３３３'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include('Tel is invalid')
+      end
     end
   end
 end
