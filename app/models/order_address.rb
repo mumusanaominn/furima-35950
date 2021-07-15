@@ -9,6 +9,7 @@ class OrderAddress
     validates :tel
     validates :token
     validates :user_id
+    validates :item_id
     validates :postal, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
   end
   validates :area_id, numericality: { other_than: 1, message: "can't be blank" }

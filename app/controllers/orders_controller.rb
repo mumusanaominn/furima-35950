@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :sold_out_item, only: [:index, :create]
-  before_action :move_to_index, only: [:create]
+  before_action :move_to_index, only: [:index, :create]
   before_action :set_item, only: [:index, :create]
 
   def index
@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
 
   def create
     @order_address = OrderAddress.new(order_params)
+    redirect_to root_path if current_user.id == @item.user_id
     if @order_address.valid?
       @order_address.save
       redirect_to root_path
@@ -42,7 +43,7 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless current_user.id == @item.user_id
+    redirect_to root_path if current_user.id == @item.user_id
   end
 
   def set_item
