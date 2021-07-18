@@ -18,73 +18,73 @@ RSpec.describe Item, type: :model do
       it 'titleが空だと保存できないこと' do
         @item.title = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Title can't be blank")
+        expect(@item.errors.full_messages).to include("タイトルを入力してください")
       end
 
       it 'textが空だと保存できないこと' do
         @item.text = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Text can't be blank")
+        expect(@item.errors.full_messages).to include("テキストを入力してください")
       end
 
       it 'priceが空だと保存できないこと' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be blank")
+        expect(@item.errors.full_messages).to include("価格を入力してください")
       end
 
       it 'imageが空だと保存できないこと' do
         @item.image = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Image can't be blank")
+        expect(@item.errors.full_messages).to include("画像を入力してください")
       end
 
       it 'category_idを選択していないと保存できないこと' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include("Categorycan't be blank")
       end
 
       it 'condition_idを選択していないと保存できないこと' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition can't be blank")
+        expect(@item.errors.full_messages).to include("Conditioncan't be blank")
       end
 
       it 'load_idを選択していないと保存できないこと' do
         @item.load_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Load can't be blank")
+        expect(@item.errors.full_messages).to include("Loadcan't be blank")
       end
 
       it 'area_idを選択していないと保存できないこと' do
         @item.area_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Area can't be blank")
+        expect(@item.errors.full_messages).to include("Areacan't be blank")
       end
 
       it 'shipping_idを選択していないと保存できないこと' do
         @item.shipping_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping can't be blank")
+        expect(@item.errors.full_messages).to include("Shippingcan't be blank")
       end
 
       it 'priceが全角数字だと保存できないこと' do
         @item.price = '２０００'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price is invalid')
+        expect(@item.errors.full_messages).to include('価格is invalid')
       end
 
       it 'priceが300円未満では保存できないこと' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price is invalid')
+        expect(@item.errors.full_messages).to include('価格is invalid')
       end
 
       it 'priceが9,999,999円を超過すると保存できないこと' do
         @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price is invalid')
+        expect(@item.errors.full_messages).to include('価格is invalid')
       end
     end
   end

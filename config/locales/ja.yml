@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      item:
+        text: テキスト
+        title: タイトル
+        image: 画像
+        price: 価格
+        
+  activemodel:
+    attributes:
+      order_address:
+        postal: 郵便番号
+        city: 市区町村
+        house: 番地
+        tel: 電話番号
+
