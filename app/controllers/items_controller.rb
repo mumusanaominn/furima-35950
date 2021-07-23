@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-
   end
 
   def create
@@ -24,8 +23,6 @@ class ItemsController < ApplicationController
   def show
     @message = Message.new
     @messages = @item.messages.includes(:user)
-    @messages = Message.order('created_at DESC')
-
   end
 
   def edit

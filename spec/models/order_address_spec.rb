@@ -23,31 +23,31 @@ RSpec.describe OrderAddress, type: :model do
       it 'tokenが空では登録できないこと' do
         @order_address.token = nil
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Tokenを入力してください")
+        expect(@order_address.errors.full_messages).to include('Tokenを入力してください')
       end
 
       it 'cityが空だと保存できないこと' do
         @order_address.city = ''
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("市区町村を入力してください")
+        expect(@order_address.errors.full_messages).to include('市区町村を入力してください')
       end
 
       it 'houseが空だと保存できないこと' do
         @order_address.house = ''
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("番地を入力してください")
+        expect(@order_address.errors.full_messages).to include('番地を入力してください')
       end
 
       it 'telが空だと保存できないこと' do
         @order_address.tel = ''
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("電話番号を入力してください", "電話番号is invalid")
+        expect(@order_address.errors.full_messages).to include('電話番号を入力してください', '電話番号is invalid')
       end
 
       it 'postalが空だと保存できないこと' do
         @order_address.postal = ''
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("郵便番号を入力してください", "郵便番号is invalid. Include hyphen(-)")
+        expect(@order_address.errors.full_messages).to include('郵便番号を入力してください', '郵便番号is invalid. Include hyphen(-)')
       end
 
       it 'postalが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
@@ -77,13 +77,13 @@ RSpec.describe OrderAddress, type: :model do
       it 'user_idが空では登録できないこと' do
         @order_address.user_id = nil
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Userを入力してください")
+        expect(@order_address.errors.full_messages).to include('Userを入力してください')
       end
 
       it 'item_idが空では登録できないこと' do
         @order_address.item_id = nil
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Itemを入力してください")
+        expect(@order_address.errors.full_messages).to include('Itemを入力してください')
       end
 
       it 'telが全角数字だと登録できないこと' do

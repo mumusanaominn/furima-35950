@@ -18,25 +18,25 @@ RSpec.describe Item, type: :model do
       it 'titleが空だと保存できないこと' do
         @item.title = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("タイトルを入力してください")
+        expect(@item.errors.full_messages).to include('タイトルを入力してください')
       end
 
       it 'textが空だと保存できないこと' do
         @item.text = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("テキストを入力してください")
+        expect(@item.errors.full_messages).to include('テキストを入力してください')
       end
 
       it 'priceが空だと保存できないこと' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("価格を入力してください")
+        expect(@item.errors.full_messages).to include('価格を入力してください')
       end
 
       it 'imageが空だと保存できないこと' do
         @item.image = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("画像を入力してください")
+        expect(@item.errors.full_messages).to include('画像を入力してください')
       end
 
       it 'category_idを選択していないと保存できないこと' do
