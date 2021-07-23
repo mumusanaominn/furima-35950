@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       ActionCable.server.broadcast 'message_channel', { content: @message, user_id: current_user.nickname }
     else
-      redirect_to root_path
+      redirect_to item_path(@item)
 
     end
   end
