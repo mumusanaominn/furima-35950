@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
 
   def show
     @message = Message.new
-    @messages = @item.messages.includes(:user)
+    @messages = @item.messages.includes(:user).order('id DESC')
   end
 
   def edit
